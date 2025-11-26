@@ -1,9 +1,10 @@
 import { Text, View } from "react-native";
 
-export default function AccountInfo() {
+
+export default function Liked() {
     return <View>
         <Text>
-            Accountinfo
+            Liked
         </Text>
     </View>
-}
+}   
