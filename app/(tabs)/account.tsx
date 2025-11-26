@@ -1,10 +1,19 @@
 
-import { Text } from "react-native";
+import { Button, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { useState } from "react";
+import { DownloadPicture } from "@/components/BottomSheet";
 
 export default function account() {
-    return <SafeAreaView>
-        <Text>Account Page</Text>
+    const [pictureOpen, setPictureOPen] = useState(false);
+    
+    return <SafeAreaView style={{ flex: 1 }}>
+        <View style={{ flex: 1 }}>
+            <Text>Account Page</Text>
+            <Button title="Download" onPress={() => { 
+                setPictureOPen(true);
+            }} />
+            {pictureOpen && <DownloadPicture onClose={() => { setPictureOPen(false); }} />}
+        </View>
     </SafeAreaView>
 }
